@@ -6,13 +6,9 @@ from langchain_groq import ChatGroq
 
 from langchain_core.messages import HumanMessage, SystemMessage
 
-load_dotenv()
+from config import settings
 
-GROQ_API_KEY = os.getenv('GROQ_API_KEY')
-# print(GROQ_API_KEY)
-
-model = ChatGroq(model='openai/gpt-oss-20b')
-print(model)
+model = settings.get_model()
 
 # messages = [
 #     SystemMessage(content="Give a me a random idiom with a keyword I give"),

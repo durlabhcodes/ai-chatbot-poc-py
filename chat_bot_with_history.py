@@ -8,9 +8,9 @@ from langchain_core.runnables import RunnableWithMessageHistory, RunnablePassthr
 from langchain_groq import ChatGroq
 from langchain_core.output_parsers import StrOutputParser
 
-load_dotenv()
+from config import settings
 
-model = ChatGroq(model='openai/gpt-oss-20b')
+model = settings.get_model()
 parser = StrOutputParser()
 
 session_store = {}
